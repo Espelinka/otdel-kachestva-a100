@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Отдел качества А-100 Девелопмент</title>
+  <meta name="description" content="Нормативная документация отдела качества А-100 Девелопмент.">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      /* Добавляем твое изображение как фон */
+      background-image: url('Fon.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #2e5939;
+      min-height: 100vh;
+    }
+
+    /* Добавляем overlay для лучшей читаемости текста */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px;
+      background: rgba(42, 127, 74, 0.9);
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    #main-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .main-btn {
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      font-size: 1.3em;
+      font-weight: bold;
+      background: rgba(102, 187, 106, 0.8);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .main-btn:hover {
+      background: rgba(67, 160, 71, 0.9);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(15px);
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+
+    .hidden { 
+      display: none !important; 
+    }
+
+    .item {
+      background: rgba(240, 249, 240, 0.7);
+      backdrop-filter: blur(5px);
+      padding: 18px;
+      margin: 18px 0;
+      border-radius: 12px;
+      border-left: 4px solid rgba(129, 199, 132, 0.8);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .item:hover { 
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      background: rgba(240, 249, 240, 0.9);
+    }
+
+    button {
+      background: rgba(102, 187, 106, 0.8);
+      backdrop-filter: blur(5px);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 12px 20px;
+      margin: 6px 4px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    }
+
+    button:hover { 
+      background: rgba(56, 142, 60, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+    }
+
+    .back-btn {
+      background: rgba(165, 214, 167, 0.8);
+      color: #2e5939;
+    }
+
+    .back-btn:hover {
+      background: rgba(165, 214, 167, 0.9);
+      color: #1b5e20;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #2e5939;
+      font-size: 0.9em;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      margin-top: 20px;
+      border-top: 2px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    }
+
+    footer a {
+      color: #2a7f4a;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+      color: #1b5e20;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { 
+        opacity: 0; 
+        transform: translateY(20px) scale(0.95); 
+      }
+      to { 
+        opacity: 1; 
+        transform: translateY(0) scale(1); 
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section, .main-btn, .item {
+      animation: slideIn 0.5s ease-out;
+    }
+
+    @media (max-width: 480px) {
+      .main-btn {
+        font-size: 1.1em;
+        padding: 16px;
+        margin: 10px 5px;
+      }
+      
+      h1 { 
+        font-size: 1.4em; 
+      }
+      
+      .section {
+        margin: 15px 10px;
+        padding: 20px;
+      }
+      
+      body {
+        background-attachment: scroll;
+      }
+    }
+
+    h1, h2, h3 {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .section h2 {
+      color: #2e5939;
+      border-bottom: 3px solid rgba(102, 187, 106, 0.5);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🏗️ Отдел качества А-100 Девелопмент</h1>
+  </header>
+
+  <main id="main-screen" class="fade-in">
+    <button class="main-btn" onclick="showSection('concrete')">Сборные железобетонные конструкции</button>
+    <button class="main-btn" onclick="showSection('monolith')">Монолитные конструкции</button>
+    <button class="main-btn" onclick="showSection('plaster')">Штукатурные работы</button>
+    <button class="main-btn" onclick="showSection('floor')">Работы по устройству полов (стяжка)</button>
+    <button class="main-btn" onclick="showSection('glazing')">Остекление</button>
+    <button class="main-btn" onclick="showSection('measurement')">Правила измерения</button>
+  </main>
+
+  <!-- Сборные железобетонные конструкции -->
+  <div id="concrete" class="section hidden">
+    <h2>Сборные железобетонные конструкции</h2>
+    
+    <div class="item">
+      <h3>Наружные стеновые панели</h3>
+      <button onclick="openPdf('pdfs/panel-outside1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/panel-outside.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/panel-outside-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <div class="item">
+      <h3>Внутренние стеновые панели</h3>
+      <button onclick="openPdf('pdfs/panel-inside1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/panel-inside.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/panel-inside-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <div class="item">
+      <h3>Плиты перекрытия</h3>
+      <button onclick="openPdf('pdfs/slab1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/slab.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/slab-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <button class="back-btn" onclick="showMain()">← Назад</button>
+  </div>
+
+  <!-- Монолитные конструкции -->
+  <div id="monolith" class="section hidden">
+    <h2>Монолитные конструкции</h2>
+    
+    <div class="item">
+      <h3>Монолитные работы</h3>
+      <button onclick="openPdf('pdfs/monolith1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/monolith.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/monolith-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <button class="back-btn" onclick="showMain()">← Назад</button>
+  </div>
+
+  <!-- Штукатурные работы -->
+  <div id="plaster" class="section hidden">
+    <h2>Штукатурные работы</h2>
+    
+    <div class="item">
+      <h3>Штукатурка</h3>
+      <button onclick="openPdf('pdfs/plaster1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/plaster.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/plaster-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <button class="back-btn" onclick="showMain()">← Назад</button>
+  </div>
+
+  <!-- Работы по устройству полов -->
+  <div id="floor" class="section hidden">
+    <h2>Работы по устройству полов (стяжка)</h2>
+    
+    <div class="item">
+      <h3>Стяжка</h3>
+      <button onclick="openPdf('pdfs/floor1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/floor.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/floor-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <button class="back-btn" onclick="showMain()">← Назад</button>
+  </div>
+
+  <!-- Остекление -->
+  <div id="glazing" class="section hidden">
+    <h2>Остекление</h2>
+    
+    <div class="item">
+      <h3>Остекление</h3>
+      <button onclick="openPdf('pdfs/glazing1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/glazing.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/glazing-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <div class="item">
+      <h3>ПВХ профиль</h3>
+      <button onclick="openPdf('pdfs/pvc-profile1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/pvc-profile.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/pvc-profile-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <div class="item">
+      <h3>Подоконная доска</h3>
+      <button onclick="openPdf('pdfs/windowsill1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/windowsill.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/windowsill-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <div class="item">
+      <h3>Отливы</h3>
+      <button onclick="openPdf('pdfs/drip-edge1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/drip-edge.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/drip-edge-rules.pdf')">📄Правила измерения</button>
+    </div>
+    
+    <button class="back-btn" onclick="showMain()">← Назад</button>
+  </div>
+
+  <!-- Правила измерения -->
+  <div id="measurement" class="section hidden">
+    <h2>Общие правила измерения</h2>
+    
+    <div class="item">
+      <button onclick="openPdf('pdfs/measurement1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/measurement.pdf')">📄 Полный документ</button>
+    </div>
+    
+    <button class="back-btn" onclick="showMain()">← Назад</button>
+  </div>
+
+  <footer>
+    © Отдел качества А-100 Девелопмент | Версия 1.01<br>
+    По вопросам сотрудничества: <a href="mailto:user@example.com">@Espelinka</a>
+  </footer>
+
+  <script>
+    function showSection(id, pushState = true) {
+      document.getElementById('main-screen').classList.add('hidden');
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      const section = document.getElementById(id);
+      if (!section) return;
+      section.classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (pushState) history.pushState({ page: id }, '', '#' + id);
+    }
+
+    function showMain(pushState = true) {
+      document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
+      document.getElementById('main-screen').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (pushState) history.pushState({ page: 'main' }, '', '#main');
+    }
+
+    // ✅ ИСПРАВЛЕНО: Добавлена функция openPdf для открытия PDF файлов
+    function openPdf(url) {
+      const tab = window.open(url, '_blank');
+      if (!tab) alert('Разрешите всплывающие окна для открытия PDF.');
+    }
+
+    window.addEventListener('popstate', e => {
+      const st = e.state;
+      if (st && st.page) {
+        st.page === 'main' ? showMain(false) : showSection(st.page, false);
+      } else showMain(false);
+    });
+
+    window.addEventListener('load', () => {
+      history.replaceState({ page: 'main' }, '', '#main');
+      const hash = location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) showSection(hash, false);
+    });
+  </script>
+</body>
+</html>
