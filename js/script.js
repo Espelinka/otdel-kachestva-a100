@@ -1,4 +1,4 @@
-// script.js
+// script.js — улучшенная версия с обработкой ошибок PDF
 
 function openPdf(url) {
   if (!url || !url.endsWith('.pdf')) {
