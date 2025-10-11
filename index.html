@@ -7,7 +7,6 @@
   <meta name="description" content="Нормативная документация отдела качества А-100 Девелопмент.">
   <link rel="icon" href="images/favicon.png" type="image/png">
   
-  <!-- ИСПРАВЛЕНО: CSS теперь подключается напрямую -->
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -243,9 +242,9 @@
     <button class="main-btn" onclick="showSection('concrete')">Сборные железобетонные конструкции</button>
     <button class="main-btn" onclick="showSection('monolith')">Монолитные конструкции</button>
     <button class="main-btn" onclick="showSection('plaster')">Штукатурные работы</button>
-    <button class="main-btn" onclick="showSection('floors')">Работы по устройству полов (стяжка)</button>
+    <button class="main-btn" onclick="showSection('floor')">Работы по устройству полов (стяжка)</button>
     <button class="main-btn" onclick="showSection('glazing')">Остекление</button>
-    <button class="main-btn" onclick="showSection('rules')">Правила измерения</button>
+    <button class="main-btn" onclick="showSection('measurement')">Правила измерения</button>
   </main>
 
   <!-- Сборные железобетонные конструкции -->
@@ -254,23 +253,23 @@
     
     <div class="item">
       <h3>Наружные стеновые панели</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/panel-outside1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/panel-outside.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/panel-outside-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <div class="item">
       <h3>Внутренние стеновые панели</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/panel-inside1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/panel-inside.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/panel-inside-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <div class="item">
       <h3>Плиты перекрытия</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/slab1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/slab.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/slab-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <button class="back-btn" onclick="showMain()">← Назад</button>
@@ -282,9 +281,9 @@
     
     <div class="item">
       <h3>Монолитные работы</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/monolith1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/monolith.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/monolith-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <button class="back-btn" onclick="showMain()">← Назад</button>
@@ -296,23 +295,23 @@
     
     <div class="item">
       <h3>Штукатурка</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/plaster1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/plaster.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/plaster-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <button class="back-btn" onclick="showMain()">← Назад</button>
   </div>
 
   <!-- Работы по устройству полов -->
-  <div id="floors" class="section hidden">
+  <div id="floor" class="section hidden">
     <h2>Работы по устройству полов (стяжка)</h2>
     
     <div class="item">
       <h3>Стяжка</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/floor1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/floor.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/floor-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <button class="back-btn" onclick="showMain()">← Назад</button>
@@ -324,42 +323,42 @@
     
     <div class="item">
       <h3>Остекление</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/glazing1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/glazing.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/glazing-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <div class="item">
       <h3>ПВХ профиль</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/pvc-profile1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/pvc-profile.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/pvc-profile-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <div class="item">
       <h3>Подоконная доска</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/windowsill1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/windowsill.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/windowsill-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <div class="item">
       <h3>Отливы</h3>
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
-      <button>📄Правила измерения</button>
+      <button onclick="openPdf('pdfs/drip-edge1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/drip-edge.pdf')">📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/drip-edge-rules.pdf')">📄Правила измерения</button>
     </div>
     
     <button class="back-btn" onclick="showMain()">← Назад</button>
   </div>
 
   <!-- Правила измерения -->
-  <div id="rules" class="section hidden">
+  <div id="measurement" class="section hidden">
     <h2>Общие правила измерения</h2>
     
     <div class="item">
-      <button>🖼 Краткое описание</button>
-      <button>📄 Полный документ</button>
+      <button onclick="openPdf('pdfs/measurement1.pdf')">🖼 Краткое описание</button>
+      <button onclick="openPdf('pdfs/measurement.pdf')">📄 Полный документ</button>
     </div>
     
     <button class="back-btn" onclick="showMain()">← Назад</button>
@@ -374,13 +373,10 @@
     function showSection(id, pushState = true) {
       document.getElementById('main-screen').classList.add('hidden');
       document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
-      
       const section = document.getElementById(id);
       if (!section) return;
-      
       section.classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      
       if (pushState) history.pushState({ page: id }, '', '#' + id);
     }
 
@@ -388,25 +384,26 @@
       document.querySelectorAll('.section').forEach(s => s.classList.add('hidden'));
       document.getElementById('main-screen').classList.remove('hidden');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      
       if (pushState) history.pushState({ page: 'main' }, '', '#main');
+    }
+
+    // ✅ ИСПРАВЛЕНО: Добавлена функция openPdf для открытия PDF файлов
+    function openPdf(url) {
+      const tab = window.open(url, '_blank');
+      if (!tab) alert('Разрешите всплывающие окна для открытия PDF.');
     }
 
     window.addEventListener('popstate', e => {
       const st = e.state;
       if (st && st.page) {
         st.page === 'main' ? showMain(false) : showSection(st.page, false);
-      } else {
-        showMain(false);
-      }
+      } else showMain(false);
     });
 
     window.addEventListener('load', () => {
       history.replaceState({ page: 'main' }, '', '#main');
-      const hash = window.location.hash.slice(1);
-      if (hash && hash !== 'main') {
-        showSection(hash, false);
-      }
+      const hash = location.hash.replace('#', '');
+      if (hash && document.getElementById(hash)) showSection(hash, false);
     });
   </script>
 </body>
