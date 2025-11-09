@@ -4,7 +4,7 @@
    ================================ */
 
 // Set your password here
-const SITE_PASSWORD = "a100quality";
+const SITE_PASSWORD = "a100";
 
 // Utility functions
 const DOMReady = (callback) => {
@@ -228,4 +228,5 @@ DOMReady(() => {
   } catch (error) {
     console.error('Initialization error:', error);
   }
+
 });
